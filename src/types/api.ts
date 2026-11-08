@@ -18,6 +18,10 @@ export type TokenResponse = {
   token_type: 'bearer';
 };
 
+export type EmailAvailabilityResponse = {
+  available: boolean;
+};
+
 export type ResearchRequest = {
   prompt: string;
   conversation_id: string;

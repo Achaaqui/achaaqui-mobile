@@ -26,6 +26,7 @@ export function useConversationQuery(conversationId: string | null) {
   return useQuery({
     queryKey: ['conversation', conversationId],
     enabled: Boolean(conversationId),
+    refetchOnMount: 'always',
     queryFn: async () => {
       const { data } = await api.get<ConversationResponse>(
         `/ai/conversations/${conversationId}/messages`,
